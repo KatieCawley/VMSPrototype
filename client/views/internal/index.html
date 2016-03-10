@@ -1,0 +1,274 @@
+<!doctype html>
+<html ng-app>
+<head>
+<meta charset="ISO-8859-1">
+<title>Internal Referral</title>
+<link rel="stylesheet" type = "text/css" href="/css/form.css"/>
+<link rel="stylesheet" type = "text/css" href="/css/discovery_panel.css"/>
+    <script src="/dependency/angular/angular.min.js"></script>
+	<script src="/dependency/jquery/dist/jquery.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="panel panel-default">
+  <div class="panel-body">Internal Referral</div>
+</div>
+
+
+<div class="form">
+	<form action="views/InternalRef2.html">
+	<fieldset class="referrer">
+	<legend>Step 1 - Referrer</legend>
+		<label for="name">* Name:</label> 
+		<input type="text" id="name" name="name" required>
+		<label for="ContactNum">* Contact Number: </label>
+		<input type="text" id="ContactNum" name="ContactNum" required>
+		<label for="ContactEmail">* Contact Email:</label>
+		<input type="email" id="ContactEmail" name="ContactEmail" required>
+		<label for="ReturnEmail">* Return Email:</label> 
+		<input type="email" name="ReturnEmail" id="ReturnEmail" required>
+		<label for="organisation">* Organisation:</label> 
+		<select id="organisation" name="organisation" required>
+			<option value="select" disabled selected>Please Select</option>
+			<option value="jobcentre">Job Centre Plus</option>
+			<option value="pensioncentre">Pension Centre</option>
+		</select> 
+		<label for="location">* Location:</label> 
+		<select id="location" name="location" required>
+			<option value="select" disabled selected>Please Select</option>
+			<option value="liverpool">Burnley Pension Centre</option>
+			<option value="london">Dundee Pension Centre</option>
+			<option value="manchester">Motherwell Pension Centre</option>
+			<option value="birmingham">Swansea Pension Centre</option>
+		</select>
+		<label for="mouaddress">* MOU/Courier Address:</label> 
+		<input type="text" id="mouaddress" name="mouaddress" required /> 
+		<a class="submit submitReferrer" href="#customer">Submit</a>
+	</fieldset>
+
+
+	<fieldset class="customer">
+		<a name="customer" />
+		<legend>Step 2 - Customer Information</legend>
+
+			<label for="title">* Title: </label>
+			<select name="title" id="title" required>
+				<option value="select" disabled selected>Please Select</option>
+				<option value="Miss">Miss</option>
+				<option value="Ms">Ms</option>
+				<option value="Mrs">Mrs</option>
+				<option value="Mr">Mr</option>
+				<option value="Dr">Dr</option>
+			</select>  
+			<label for="fname"> * First Name: </label>
+			<input type="text" name="fname" id="fname" required> 
+			<label for="lname"> * Surname: </label>
+			<input type="text" name="sname" id="lname" required>
+			<label for="HALine1">* Home Address Line1: </label>
+			<input type="text" name="HALine1" id="HALine1"required>
+			<label for="HALine2">* Home Address Line 2: </label>
+			<input type="text" name="HALine2" id="HALine2" required>
+			<label for=HATownorCity>* Home Address Town/City: </label> 
+			<input type="text" name="HATownorCity" id="HATownorCity" required>
+			<label for="HACounty">* Home Address County: </label>
+			<input type="text" name="HACounty" required>
+			<label for="HAPostCode">* Home Address Post Code: </label>
+			<input type="text" name="HAPostCode" id="HAPostCode"required>
+			<div class="COA">
+			<label for="chkYes">* Care of Address? </label>
+			<label for="chkYes"> <input type="radio" id="chkYes" name="chk" /> Yes
+			</label> <label for="chkNo"> <input type="radio" id="chkNo" name="chk" /> No
+			</label>
+			<div id="dvtext">
+				<label for="Address1">Address Line 1:</label> 
+				<input type="text" id="Address1" />
+				<label for="Address2">Address Line 2:</label>
+				<input type="text" id="Address2" />
+				<label for="Address3">Address Line 3:</label>
+				<input type="text" id="Address3" />
+				<label for="Address4">Address Line 4:</label>
+				<input type="text" id="Address4" />
+				<label for="PostCode">Postcode:</label>
+				<input type="text" id="PostCode" />
+			</div>
+			</div>
+			<label for="ninocrn">* National Insurance, CRN, Unknown</label>
+			<select id="ninocrn" name="ninocrn" >
+				<option>Please select</option>
+				<option value="NINO">National Insurance</option>
+				<option value="CRN">Child Reference Number</option>
+				<option value="Unknown">Unknown</option>
+			</select> 
+			<input type="text" name="ninocrn" id="ninocrn" /> 
+			<label for="DOB">* Date of Birth:</label>
+			<input type="date" name="DOB" id="DOB"required>
+			<label for="ContactNumHome">Contact Number - Home: </label>
+			<input type="text" name="ContactNumHome" id="ContactNumHome">
+			<label for="ContactNumMobile">Contact Number - Mobile:</label> 
+			<input type="text" name="ContactNumMobile" id="ContactNumMobile">
+			<label for="ContactNumOther">Contact Number - Other: </label>
+			<input type="text" name="ContactNumOther">
+			<div>
+			<label for="UCB">*Unacceptable Customer Behaviour (UCB): </label>
+			<label for="UCB">No</label> 
+			<input type="radio" id="UCB" name="UCB" value="No" Required>
+			<label for="UCB">Yes</label> 
+			<input type="radio" name="UCB" value="Yes" Required>
+			</div>
+			<div>
+			<label for="Welsh">Welsh Letter: </label>
+			<label for="Welsh">No</label> 
+			<input type="radio" id="Welsh" name="Welsh" value="No" checked>
+			<label for="Welsh">Yes</label>
+			<input type="radio" id="Welsh" name="Welsh" value="Yes">
+			</div>
+			<div>
+			<label for="LP">Large Print Letter:</label>
+			<label for="LP">No</label> 
+			<input type="radio" id="LP" name="LP" value="No" checked>
+			<label for="LP">Yes</label> 
+			<input type="radio" id="LP" name="LP" value="Yes">
+			</div>
+
+		<a class="submit submitCustomer" href="#representative">Submit</a>	
+		<a class="back backCustomer" href="#referrer">Back</a>
+		</fieldset>
+
+
+		<fieldset class="representative">
+		<a name="representative"/>
+<legend>
+	Step 3 - Representative Information
+</legend>
+
+			<label for="PABandCAB">* Does the Claimant have a PAB/CAB?</label>
+				<select id="PABandCAB" required onchange="showDiv(this)">
+					<option value="select" disabled selected>Please Select</option>
+					<option value="Confirmed">Confirmed</option>
+			<option value="Confirmed">Potential</option>
+			<option value="NotRequired">Not Required</option>
+		</select>  
+		
+ 
+		<label for="title">* Title:</label> 
+		<select name="title" id="title" required>
+			<option value="select" disabled selected>Please Select</option>
+			<option value="Miss">Miss</option>
+			<option value="Ms">Ms</option>
+			<option value="Mrs">Mrs</option>
+			<option value="Mr">Mr</option>
+			<option value="Dr">Dr</option>
+		</select>	
+		<label for="fname">* First Name:</label> 
+		<input type="text" name="fname" id="fname" required>
+		<label for="sname">* Surname: </label>
+		<input type="text" name="sname" id="sname" required>
+		<label for="Address">* Address: </label>
+		<select name="Address" id="Address" required>
+			<option value="select" disabled selected>Please Select</option>
+			<option value="Same">Same As Claimant</option>
+			<option value="other">Other</option>
+		</select>
+		<label for="HALine1">Representative Address Line 1:</label> 
+		<input type="text" name="HALine1" id="HALine1">
+		<label for="HALine2">Representative Address Line 2: </label>
+		<input type="text" name="HALine2" id="HALine2">
+		<label for="HATownorCity">Representative Address Town/City:</label> 
+		<input type="text" name="HATownorCity" id="HATownorCity">
+		<label for="HACounty">Representative Address County:</label> 
+		<input type="text" name="HACounty" id="HACounty">
+		<label for="HAPostCode">Representative Address Post Code: </label>
+		<input type="text" name="HAPostCode" id="HAPostCode">
+		<label for="NINO">National Insurance Number: </label>
+		<input type="text" name="NINO" id="NINO">
+		<label for="DOB">Date of Birth: </label>
+		<input type="date" name="DOB" id="DOB">
+		<label for="ContactNumHome">Contact Number - Home: </label> 
+		<input type="text" name="ContactNumHome" id="ContactNumHome">
+		<label for="ContactNumMobile">Contact Number - Mobile:</label>
+		<input type="text" name="ContactNumMobile" id="ContactNumMobile">
+		<label for="ContactNumOther">Contact Number - Other: </label>
+		<input type="text" name="ContactNumOther" id="ContactNumOther">
+		<div>
+		<label for="UCB2">* Unacceptable Customer Behaviour (UCB):</label> 
+		<label for="UCB2">No</label>
+		<input type="radio" id="UCB2" name="UCB2" value="No" checked>
+		<label for="UCB2">Yes</label>
+		<input type="radio" id="UCB2" name="UCB2" value="Yes"> 
+		</div>
+		<a class="submit submitRepresentative" href="#visit">Submit</a>
+		<a class="back backRepresentative" href="#customer">Back</a>
+	</fieldset>
+
+	<fieldset class="visit">
+	<a name="visit"/>
+	 <legend>Step 4 - Visit Details</legend>
+
+
+		<label for="reason">* Reason for Visit:</label>
+		<input type="text" name="reason" id="reason"required>
+		<label for="HealthCondition"> Health Conditions:</label>
+		<input type="text" name="HealthCondition" id="HealthCondition">
+		<label for="Address">* Address of Visit: </label>
+		<select id="Address"required onchange="showDiv(this)">
+			<option value="Other" disabled selected>Please Select</option>
+			<option value="Cust">Customer Address</option>
+			<option value="Rep">Representative Address</option>
+			<option value="Other">Other Address</option>
+		</select>
+		
+		<div id="hidden_div">
+		<label for="HALine1">Other Address Line 1: </label>
+		<input type="text" name="HALine1" id="HALine1">
+		<label for="HALine2">Other Address Line 2: </label>
+		<input type="text" name="HALine2" id="HALine2">
+		<label for="HATownorCity">Other Address Town/City: </label>
+		<input type="text" name="HATownorCity" id="HATownorCity">
+		<label for="HACounty">Other Address County: </label>
+		<input type="text" name="HACounty" id="HACounty">
+		<label for="HAPostCode">Other Address Post Code: </label>
+		<input type="text" name="HAPostCode" id="HAPostCode">
+		</div>
+		
+		
+		<label for="visitNeedIdentfied">* Date Visit Need Identified: </label>
+		<input type="date" name="visitNeedIdentfied" id="visitNeedIdentfied">
+		<label for="risks">Risk Factors: </label>
+		<input type="text" name="risks" id="risks">
+		<label for="accessibility">Accessibility Requirements: </label>
+		<input type="text" name="accessibility" id="accessibility">
+		
+		<a class="submit submitVisit" href="#attachments">Submit</a>
+		<a class="back backVisit" href="#representative">Back</a>
+
+	</fieldset>
+	<fieldset class="attachments">
+	<a name="attachments"/>
+	 <legend>Step 5 - Attachments</legend>
+
+		<label for="myFile">Supporting Documents: </label>
+		<input type="file" id="myFile">
+		
+		<label for="myFile2">Add another document: </label>
+		<input type="file" id="myFile2">
+		
+		
+		<a class="submit submitAttachments" href="#">Submit</a>
+		<a class="back backAttachments" href="#visit">Back</>
+		</fieldset>
+	</form>
+	
+	
+	
+	
+</div>
+
+	<script src="/js/form.js"></script>
+</body>
+</html>
