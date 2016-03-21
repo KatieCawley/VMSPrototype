@@ -27,7 +27,7 @@ gulp.task('bower', function() {
 gulp.task('new-machine', ['bower'], function() {});
 
 gulp.task('build', function() {
-	runSequence('clean', 'app-css');
+	runSequence('clean', 'jshint', 'app-css');
 });
 
 gulp.task('clean', function() {
