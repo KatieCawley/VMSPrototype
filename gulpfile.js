@@ -9,7 +9,7 @@ requireDir('./gulp/tasks', {
   recurse: true
 });
 
-gulp.task('start-node', function() {
+gulp.task('start-app', function() {
   return nodemon({
     script: 'server.js'
   });
@@ -17,4 +17,8 @@ gulp.task('start-node', function() {
 
 gulp.task('bower', function() {
   return bower();
+});
+
+gulp.task('new-machine', ['bower'], function() {
+
 });
