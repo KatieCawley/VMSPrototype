@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   requireDir = require('require-dir'),
   sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
+	del = require('del');
 
 requireDir('./gulp/tasks', {
   recurse: true
@@ -22,11 +23,13 @@ gulp.task('bower', function() {
   return bower();
 });
 
-gulp.task('new-machine', ['bower'], function() {
-
-});
+gulp.task('new-machine', ['bower'], function() {});
 
 gulp.task('build', ['app-css']);
+
+gulp.task('clean', function() {
+	return del.sync(['public']);
+});
 
 gulp.task('app-css', () => {
   return gulp.src('client/static/css/**/*.scss')
