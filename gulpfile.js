@@ -7,6 +7,7 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
 	concat = require('gulp-concat'),
   sourcemaps = require('gulp-sourcemaps'),
+	runSequence = require('run-sequence'),
 	del = require('del');
 
 requireDir('./gulp/tasks', {
@@ -25,7 +26,9 @@ gulp.task('bower', function() {
 
 gulp.task('new-machine', ['bower'], function() {});
 
-gulp.task('build', ['app-css']);
+gulp.task('build', function() {
+	runSequence('clean', 'app-css');
+});
 
 gulp.task('clean', function() {
 	return del.sync(['public']);
