@@ -22,6 +22,12 @@ gulp.task('bower', function() {
   return bower();
 });
 
+gulp.task('dist', [], () => {
+  return gulp.src(['./package.json'])
+  .pipe(gulp.dest('build'));
+});
+
+
 gulp.task('new-machine', ['bower'], function() {});
 
 gulp.task('build', function() {
