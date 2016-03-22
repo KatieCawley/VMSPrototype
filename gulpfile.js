@@ -25,7 +25,7 @@ gulp.task('bower', function() {
 });
 
 gulp.task('copy-to-build', ['clean'], () => {
-  return gulp.src(['./package.json', '*app/**', '*client/static/**'])
+  return gulp.src(['./package.json', '*app/**', '*client/**', '*bower_components/**'])
   .pipe(gulp.dest('build'));
 });
 

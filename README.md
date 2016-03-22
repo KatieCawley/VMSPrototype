@@ -16,3 +16,8 @@
 
 ### start up the app
 - gulp start-app
+
+### distributable
+- gulp dist
+- tar -C /path/to/deployment -xf dist/vms.tar
+- node /path/to/deployment/app/server.js
