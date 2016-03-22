@@ -14,7 +14,7 @@ requireDir('./gulp/tasks', {
 
 gulp.task('start-app', function() {
   return nodemon({
-    script: 'server.js'
+    script: 'app/server.js'
   });
 });
 
@@ -27,4 +27,3 @@ gulp.task('new-machine', ['bower'], function() {});
 gulp.task('build', function() {
 	runSequence('jshint');
 });
-

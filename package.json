@@ -4,7 +4,8 @@
   "description": "ReferralApp",
   "private": true,
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "bower": "^1.7.7",
@@ -13,9 +14,7 @@
     "gulp-bower": "0.0.13",
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.6",
-	"run-sequence": "^1.1.5",
-
+    "run-sequence": "^1.1.5",
     "require-dir": "^0.3.0"
-
   }
 }
