@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   bower = require('gulp-bower'),
 	runSequence = require('run-sequence'),
 	requireDir = require('require-dir'),
+  tar = require('gulp-tar'),
   execSync = require('child_process').execSync,
   del = require('del');
 
@@ -37,10 +38,16 @@ gulp.task('clean',() =>{
 });
 
 gulp.task('dist', ()=>{
-  runSequence('clean', 'copy-to-build', 'prod-modules');
+  runSequence('clean', 'copy-to-build', 'prod-modules', 'zip');
 });
 
 gulp.task('new-machine', ['bower'], function() {});
+
+gulp.task('zip', ()=>{
+  return gulp.src(['build/**'])
+  .pipe(tar('vms.tar'))
+  .pipe(gulp.dest('dist'));
+});
 
 gulp.task('build', function() {
 	runSequence('jshint');
