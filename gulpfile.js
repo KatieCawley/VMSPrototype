@@ -3,18 +3,16 @@
 var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   bower = require('gulp-bower'),
-  requireDir = require('require-dir'),
-  sass = require('gulp-sass'),
-	concat = require('gulp-concat'),
-  sourcemaps = require('gulp-sourcemaps'),
 	runSequence = require('run-sequence'),
-	del = require('del');
+	requireDir = require('require-dir');
+
+
 
 requireDir('./gulp/tasks', {
   recurse: true
 });
 
-gulp.task('start-app', ['build'], function() {
+gulp.task('start-app', function() {
   return nodemon({
     script: 'server.js'
   });
@@ -27,18 +25,6 @@ gulp.task('bower', function() {
 gulp.task('new-machine', ['bower'], function() {});
 
 gulp.task('build', function() {
-	runSequence('clean', 'jshint', 'app-css');
+	runSequence('jshint');
 });
 
-gulp.task('clean', function() {
-	return del.sync(['public']);
-});
-
-gulp.task('app-css', function(){
-  return gulp.src('client/static/css/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(concat('app.css'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('public/css'));
-});

@@ -11,8 +11,6 @@ app.get('/external', function(req, res) {
 
 app.use(express.static(__dirname + '/client/static'));
 app.use('/dependency', express.static(__dirname + '/bower_components'));
-app.use('/public', express.static(__dirname + '/public'));
-
 
 app.listen(3000, function() {
   console.log('Listening...');

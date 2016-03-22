@@ -1,7 +1,7 @@
-@import "colours";
-@import "typography";
-@import "shims";
-@import "grid_layout";
+@import "../colours";
+@import "../typography";
+@import "../shims";
+@import "../grid_layout";
 
 // Phase banner usage:
 //
@@ -72,3 +72,5 @@
     background-color: $beta-colour;
   }
 }
+Status API Training Shop Blog About Pricing
+© 2016 GitHub, Inc. Terms Privacy Security Contact
