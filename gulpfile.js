@@ -34,7 +34,7 @@ gulp.task('clean', function() {
 	return del.sync(['public']);
 });
 
-gulp.task('app-css', () => {
+gulp.task('app-css', function(){
   return gulp.src('client/static/css/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
