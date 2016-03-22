@@ -4,8 +4,8 @@ var gulp = require('gulp'),
   nodemon = require('gulp-nodemon'),
   bower = require('gulp-bower'),
 	runSequence = require('run-sequence'),
-	requireDir = require('require-dir');
-
+	requireDir = require('require-dir'),
+  del = require('del');
 
 
 requireDir('./gulp/tasks', {
@@ -22,9 +22,13 @@ gulp.task('bower', function() {
   return bower();
 });
 
-gulp.task('dist', [], () => {
-  return gulp.src(['./package.json'])
+gulp.task('dist', ['clean'], () => {
+  return gulp.src(['./package.json', '*app/**'])
   .pipe(gulp.dest('build'));
+});
+
+gulp.task('clean',() =>{
+  return del.sync(['build']);
 });
 
 
