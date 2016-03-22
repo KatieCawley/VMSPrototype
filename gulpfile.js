@@ -5,6 +5,7 @@ var gulp = require('gulp'),
   bower = require('gulp-bower'),
 	runSequence = require('run-sequence'),
 	requireDir = require('require-dir'),
+  execSync = require('child_process').execSync,
   del = require('del');
 
 
@@ -22,15 +23,22 @@ gulp.task('bower', function() {
   return bower();
 });
 
-gulp.task('dist', ['clean'], () => {
-  return gulp.src(['./package.json', '*app/**'])
+gulp.task('copy-to-build', ['clean'], () => {
+  return gulp.src(['./package.json', '*app/**', '*client/static/**'])
   .pipe(gulp.dest('build'));
+});
+
+gulp.task('prod-modules', ()=> {
+  return execSync('npm install --production --prefix build');
 });
 
 gulp.task('clean',() =>{
   return del.sync(['build']);
 });
 
+gulp.task('dist', ()=>{
+  runSequence('clean', 'copy-to-build', 'prod-modules');
+});
 
 gulp.task('new-machine', ['bower'], function() {});
 
