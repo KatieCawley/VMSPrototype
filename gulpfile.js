@@ -34,7 +34,7 @@ gulp.task('prod-modules', ()=> {
 });
 
 gulp.task('clean',() =>{
-  return del.sync(['build']);
+  return del.sync(['build','dist']);
 });
 
 gulp.task('dist', ()=>{
