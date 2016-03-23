@@ -20,6 +20,8 @@
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-tar": "^1.8.0",
+    "jasmine": "^2.4.1",
+    "jasmine-reporters": "^2.1.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.5"
   }
