@@ -9,13 +9,14 @@
   "dependencies": {
     "express": "^4.13.4",
     "path": "^0.12.7"
-
   },
   "devDependencies": {
     "bower": "^1.7.7",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-bower": "0.0.13",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jasmine": "^2.3.0",
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-tar": "^1.8.0",
