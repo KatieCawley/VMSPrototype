@@ -51,5 +51,5 @@ gulp.task('zip', ()=>{
 });
 
 gulp.task('build', function() {
-	runSequence('jshint');
+	runSequence('jshint','unit');
 });
