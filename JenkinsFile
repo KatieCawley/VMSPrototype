@@ -1,0 +1,3 @@
+node {
+  echo 'pipeline from git'
+}
