@@ -1,4 +1,4 @@
 node {
   echo 'pipeline from git'
-  sh 'gulp dist'
+  sh 'node node_modules\gulp\bin\gulp.js  dist'
 }
