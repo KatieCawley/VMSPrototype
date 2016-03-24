@@ -24,7 +24,7 @@ gulp.task('instrument-app', () => {
 });
 
 gulp.task('unit', ['instrument-app'], () =>{
-  gulp.src('test/app/**.js')
+  gulp.src('test/unit/app/**.js')
   .pipe(gulpJasmine({
     reporter: junitReporters('reports/unit')
   }))
