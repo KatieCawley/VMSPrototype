@@ -1,3 +1,4 @@
 node {
   echo 'pipeline from git'
+  sh 'gulp dist'
 }
